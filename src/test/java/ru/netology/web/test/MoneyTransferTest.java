@@ -1,5 +1,6 @@
 package ru.netology.web.test;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.LoginPage;
@@ -10,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MoneyTransferTest {
 
     @Test
-    void shouldSuccessfulTranserFromSecondToFirst() {
+    @DisplayName("Should transfer money from second card to first card")
+    void shouldSuccessfulTransferFromSecondToFirst() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
@@ -32,7 +34,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldSuccessfulTranserFromFirstToSecond() {
+    @DisplayName("Should transfer money from first card to second card")
+    void shouldSuccessfulTransferFromFirstToSecond() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
